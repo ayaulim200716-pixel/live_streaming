@@ -1,0 +1,69 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholder';
+@use 'sass:color';
+
+.about__section {
+    padding: 140px 0 0 0;
+
+    .about {
+        margin: 0 auto;
+        @include m.d-flex (start, center, nowrap, column, 0, 130px);
+
+        &__quality {
+            width: 100%;
+            height: 400px;
+            padding: 0 0 0 15px;
+            background: url('../assets/image\ 9.png') 99% 100%/contain no-repeat;
+
+            &-title {
+                @include m.font (45px, 400, v.$color_white);
+            }
+            &-desc{
+                margin: 10px 0 0 0;
+                max-width: 590px;
+                @include m.font (20px, 300, v.$color_white);
+            }
+
+            @media (max-width:v.$media_xl) {
+                background: linear-gradient(180deg, rgba(103,143,242,1)0%, rgba(104,143,242,0)74%),
+                      url('../assets/image\ 9.png') 99% 45%/500px no-repeat;
+            }
+            @media (max-width:v.$media_md) {
+                background: url('../assets/image\ 9.png') 99% 100%/450px no-repeat;
+
+                &-title {
+                  @include m.font (35px, 400, v.$color_white);
+                }
+                &-desc{
+                   max-width: 500px;
+                   @include m.font (16px, 300, v.$color_white);
+                }
+            }
+
+            @media (max-width:v.$media_sm) {
+                &-desc {
+                   max-width: 320px;
+                }
+
+                background: url('../assets/image\ 9.png') 153px 100%/ 400px no-repeat;
+            }
+        }
+
+        &__touch {
+            width: 100%;
+            height: 400px;
+            padding: 0 0 0 15px;
+            background: url('../assets/phone.png') 99% 100%/contain no-repeat;
+
+            &-title {
+                @include m.font (45px, 400, v.$color_white);
+            }
+            &-desc{
+                margin: 10px 0 0 0;
+                max-width: 590px;
+                @include m.font (20px, 300, v.$color_white);
+            }
+        }
+    }
+}
