@@ -111,3 +111,32 @@
         width: 330px;
     }
 }
+
+.wave-card {
+    width: 500px;
+    height: 275px;
+    background: url('../assets/Rectangle\ 9.png') center/contain no-repeat; 
+    @include m.d-flex(start,start,nowrap,column,0,35px);
+
+    &__img {
+        margin: 30px 0 0 40px;
+        border-radius: 50%;
+    }
+
+    &__quote {
+        @include m.font (16px, 400, v.$color_white);
+        margin: 0 55px 0 45px;
+        line-height: 1.4;
+        text-align: justify;
+    }
+
+    @media(max-width: v.$media_md) {
+        width: 330px;
+        row-gap: 15px;
+        background: url('../assets/Rectangle\ 9.png') 50% 0/contain no-repeat;
+
+        &__quote {
+           @include m.font (12px, 400, v.$color_white);
+        }
+    }
+}
